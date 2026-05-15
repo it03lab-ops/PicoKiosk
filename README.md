@@ -1,49 +1,50 @@
-# PicoZen
-An alternative **AND UNOFFICIAL** library and utility app for PICO XR (and Quest). Designed to look and feel like it came stock.
+# PicoKiosk
 
-<img src="https://github.com/barnabwhy/PicoZen/assets/22575741/12d1007c-32c2-44d5-91b6-a7bfb92acb6b" width="100%" />
-<br><br>
-<img src="https://github.com/barnabwhy/PicoZen/assets/22575741/5a0eee96-b33e-455f-9b81-fb05300569c2" width="50%"
-/><img src="https://github.com/barnabwhy/PicoZen/assets/22575741/cc5b2019-36da-43b7-8f91-ace563154433" width="50%" />
-<br><br>
+**Kiosk-mode launcher for PICO 4 (and possibly Meta Quest) VR headsets**  
+Based on [PicoZen](https://github.com/barnabwhy/PicoZen) by [barnabwhy](https://github.com/barnabwhy), with major modifications for restricted public use.
+
+> ⚠️ **Unofficial project** – not affiliated with PICO or Meta.  
+> ✅ Designed for scenarios where a VR headset is shared by multiple users (museums, showrooms, training, etc.).  
+> 🔒 Locks the user into approved apps only – no access to system settings, home button, notification bar.
+
+---
+
+## 🎯 Features (vs original PicoZen)
+
+| Feature | PicoZen (original) | PicoKiosk (this fork) |
+|---------|--------------------|------------------------|
+| Show all installed apps | ✅ | ❌ (whitelist only) |
+| Admin-controlled app whitelist | ❌ | ✅ |
+| Block system settings access | ❌ | ✅ |
+| Block notification bar / quick settings | ❌ | ✅ |
+| Prevent exit to system launcher (HOME button) | ❌ | ✅ |
+| Sideloading APKs | ✅ | ✅ (optional, can be disabled) |
+
+---
+
+## ⚠️ Compatibility & Caveats
+
+- **Primary target:** PICO 4 (tested on PICO 4). Should work on PICO Neo 3.
+- **Meta Quest (Quest 2/3/Pro):** *Untested.* Because the original PicoZen was reported to work on Quest, this fork may also run on Quest, but **no guarantees**. The system UI blocking methods differ between PICO and Meta’s VROS. Use at your own risk.
+- **Android version requirement:** Android 10+ (typical for XR headsets).
+
+---
+
+## 📥 Installation
+
+1. **Download the latest APK** from [Releases](#) (not yet available – you will build from source).
+2. **Sideload the APK** onto your headset (using ADB or SideQuest).
+3. **Launch PicoKiosk** from the system launcher.
+4. **Grant overlay / notification permissions** if requested.
+5. **Set PicoKiosk as default launcher** (may require ADB: `adb shell pm set-home-activity com.yourname.picokiosk/.MainActivity`).
+
+---
+
+## 🔧 Building from source
+
+```bash
+git clone https://github.com/it03lab-ops/PicoKiosk.git
+cd PicoKiosk
+# Open in Android Studio, sync Gradle, then Build -> Build APK(s)
 
 
-**Features**
-- All apps in one place
-- PICO OS design
-- Sideloading tools (PicoZen does not condone piracy, these tools are for the download of legally obtained files through a wireless connection)
-- Save management
-
-----
-
-**Upcoming**
-- System tweaks
-
-----
-
-**Discord**
-
-https://discord.gg/D4DBD2N6sA
-
-----
-
-**Web client**
-
-https://web.picozen.app/
-
-Repository: [PicoZen-Web](https://github.com/barnabwhy/PicoZen-Wb)
-
-----
-
-**Thanks**
-- [Veticia](https://github.com/Veticia) for their work on [PiLauncherNext](https://github.com/Veticia/PiLauncherNext) which some components were adapted from.
-- [basti564](https://github.com/basti564) for their work on [DreamGrid](https://github.com/basti564/DreamGrid) which some components were adapted from.
-- [Flumpmeister](https://github.com/Flumpmeister) for their help improving Quest compatability.
-
-----
-
-**Translators**
-- Russian: [ZetaXis](https://github.com/ZetaXis)
-- Chinese (Simplified): [heiha10](https://github.com/heiha10)
-- Italian: [stefaniscion](https://github.com/stefaniscion)
-- German [TarekLP](https://github.com/TarekLP)
